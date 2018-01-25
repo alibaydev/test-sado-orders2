@@ -11,6 +11,8 @@ import retrofit2.http.POST;
 public interface OrderService {
 
     @FormUrlEncoded
-    @POST("/report/GetRawData.asmx")
+    @POST("/report/GetRawData.asmx/GetData")
     Call<OrdersResponse> getOrders(@Field("data") String mode);
 }
+
+//curl -d "data=not_executed" -H "Content-Type: application/x-www-form-urlencoded" -X POST http://10.20.181.172/report/GetRawData.asmx/GetData -o response.txt
